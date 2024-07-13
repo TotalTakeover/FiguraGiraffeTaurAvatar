@@ -1,0 +1,15 @@
+{
+	"name": "Giraffe Taur",
+	"description": "\"Big ol' stretch.\"",
+	"authors": [
+		"\nPsycho Breadstick (Model Designer, QA, Origin)\n",
+		"Katt (Updated scripts, APIs)\n",
+		"Grandpa Scout (APIs)\n",
+		"Jimmy (QA, Animation code)\n",
+		"Squishy (APIs)\n",
+		"4P5 (APIs, Better Action Wheel)\n",
+		"PoolloverNathan (JSONs)\n",
+		"Total (Avatar Maker)\n"
+	],
+	"version": "0.1.4"
+}
