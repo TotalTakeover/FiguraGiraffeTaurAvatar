@@ -5,7 +5,7 @@ if not host:isHost() then return end
 local itemCheck = require("lib.ItemCheck")
 local avatar    = require("scripts.Player")
 --local armor     = require("scripts.Armor")
---local camera    = require("scripts.CameraControl")
+local camera    = require("scripts.CameraControl")
 --local anims     = require("scripts.Anims")
 --local squapi    = require("scripts.SquishyAnims")
 local color     = require("scripts.ColorProperties")
@@ -139,8 +139,8 @@ pages.armor
 
 -- Camera actions
 pages.camera
-	--:action( -1, camera.posPage)
-	--:action( -1, camera.eyePage)
+	:action( -1, camera.posPage)
+	:action( -1, camera.eyePage)
 	:action( -1, backAction)
 
 -- Giraffe actions
