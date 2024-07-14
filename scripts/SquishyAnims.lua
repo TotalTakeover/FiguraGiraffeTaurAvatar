@@ -13,9 +13,9 @@ local function calculateParentRot(m)
 	
 	local parent = m:getParent()
 	if not parent then
-		return m:getOffsetRot()
+		return m:getTrueRot()
 	end
-	return calculateParentRot(parent) + m:getOffsetRot()
+	return calculateParentRot(parent) + m:getTrueRot()
 	
 end
 
@@ -44,12 +44,36 @@ local tail = squapi.tail:new(
 	25    -- Up Limit (25)
 )
 
+local headParts = {
+	
+	giraffeParts.UpperBody,
+	giraffeParts.Neck3,
+	giraffeParts.Neck2,
+	giraffeParts.Neck1,
+	
+}
+
+-- Squishy smooth torso
+local head = squapi.smoothHead:new(
+	headParts,
+	1,    -- Strength (1)
+	0.2,  -- Tilt (0.2)
+	1,    -- Speed (1)
+	false -- Keep Original Head Pos (false)
+)
+
+-- Head variable
+local headStrength = head.strength[1]
+
 -- Squishy crouch
 squapi.crouch(anims.crouch)
 
 function events.TICK()
 	
-	
+	-- Adjust head strength
+	for i in ipairs(head.strength) do
+		head.strength[i] = headStrength / (pose.crouch and 2 or 1)
+	end
 	
 end
 
