@@ -3,7 +3,7 @@ local giraffeParts = require("lib.GroupIndex")(models.models.Giraffe)
 local squapi       = require("lib.SquAPI")
 local ground       = require("lib.GroundCheck")
 local pose         = require("scripts.Posing")
---local effects      = require("scripts.SyncedVariables")
+local effects      = require("scripts.SyncedVariables")
 
 -- Animation setup
 local anims = animations["models.Giraffe"]
@@ -16,6 +16,24 @@ local function calculateParentRot(m)
 		return m:getTrueRot()
 	end
 	return calculateParentRot(parent) + m:getTrueRot()
+	
+end
+
+-- Lerp leg table
+local legLerp = {
+	current    = 0,
+	nextTick   = 0,
+	target     = 0,
+	currentPos = 0
+}
+
+-- Set lerp starts on init
+function events.ENTITY_INIT()
+	
+	local apply = ground() and 1 or 0
+	for k, v in pairs(legLerp) do
+		legLerp[k] = apply
+	end
 	
 end
 
@@ -65,21 +83,87 @@ local head = squapi.smoothHead:new(
 -- Head variable
 local headStrength = head.strength[1]
 
+-- Squishy vanilla legs
+local frontLeftLeg = squapi.leg:new(
+	giraffeParts.FrontLeftLeg,
+	0.25,  -- Strength (0.25)
+	false, -- Right Leg (false)
+	false  -- Keep Position (false)
+)
+
+local frontRightLeg = squapi.leg:new(
+	giraffeParts.FrontRightLeg,
+	0.25, -- Strength (0.25)
+	true, -- Right Leg (true)
+	false -- Keep Position (false)
+)
+
+local backLeftLeg = squapi.leg:new(
+	giraffeParts.BackLeftLeg,
+	0.25, -- Strength (0.25)
+	true, -- Right Leg (true)
+	false -- Keep Position (false)
+)
+
+local backRightLeg = squapi.leg:new(
+	giraffeParts.BackRightLeg,
+	0.25,  -- Strength (0.25)
+	false, -- Right Leg (false)
+	false  -- Keep Position (false)
+)
+
+-- Leg strength variables
+local frontLeftLegStrength  = frontLeftLeg.strength
+local frontRightLegStrength = frontRightLeg.strength
+local backLeftLegStrength   = backLeftLeg.strength
+local backRightLegStrength  = backRightLeg.strength
+
+-- Squishy taur
+local taur = squapi.taur:new(
+	giraffeParts.LowerBody,
+	giraffeParts.FrontLegs,
+	giraffeParts.BackLegs
+)
+
 -- Squishy crouch
 squapi.crouch(anims.crouch)
 
 function events.TICK()
+	
+	-- Variables
+	local onGround = ground()
+	local inWater  = player:isInWater()
 	
 	-- Adjust head strength
 	for i in ipairs(head.strength) do
 		head.strength[i] = headStrength / (pose.crouch and 2 or 1)
 	end
 	
+	-- Control targets based on variables
+	legLerp.target = (onGround or inWater or pose.elytra or effects.cF) and 1 or 0
+	taur.target    = (onGround or effects.cF) and 0 or taur.target
+	
+	-- Tick lerp
+	legLerp.current  = legLerp.nextTick
+	legLerp.nextTick = math.lerp(legLerp.nextTick, legLerp.target, 0.5)
+	
 end
 
 function events.RENDER(delta, context)
 	
-	-- Set upperbody to offset rot and crouching pivot point
+	-- Render lerp
+	legLerp.currentPos = math.lerp(legLerp.current, legLerp.nextTick, delta)
+	
+	-- Adjust leg strengths
+	frontLeftLeg.strength  = frontLeftLegStrength  * legLerp.currentPos
+	frontRightLeg.strength = frontRightLegStrength * legLerp.currentPos
+	backLeftLeg.strength   = backLeftLegStrength   * legLerp.currentPos
+	backRightLeg.strength  = backRightLegStrength  * legLerp.currentPos
+	
+	giraffeParts.NeckPivot
+		:offsetRot(-giraffeParts.LowerBody:getRot())
+	
+	-- Set upperbody to offset crouching pivot point
 	giraffeParts.UpperBody
 		:offsetPivot(anims.crouch:isPlaying() and -giraffeParts.UpperBody:getAnimPos() or 0)
 	
