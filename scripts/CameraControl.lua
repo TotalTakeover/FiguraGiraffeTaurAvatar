@@ -80,7 +80,7 @@ function events.RENDER(delta, context)
 		if pose.stand or pose.crouch then
 			
 			-- If standing, lower camera offset
-			posOffset = posOffset - vec(0, 24 * modelEyeHeight, pose.crouch and -4 or 0) / 16
+			posOffset = posOffset - vec(0, 26 * modelEyeHeight, pose.crouch and -4 or 0) / 16
 			
 			if pose.crouch then
 				
