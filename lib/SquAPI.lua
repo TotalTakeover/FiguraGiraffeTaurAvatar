@@ -1000,10 +1000,10 @@ function squapi.taur:new(taurBody, frontLegs, backLegs)
             else	
                 self.taurBody:setRot(self.taur.pos, 0, 0)
                 if self.backLegs then
-                    self.backLegs:setRot(self.taur.pos*2, 0, 0)
+                    self.backLegs:setRot(self.taur.pos*3, 0, 0)
                 end
                 if self.frontLegs then
-                    self.frontLegs:setRot(-self.taur.pos*2, 0, 0)
+                    self.frontLegs:setRot(-self.taur.pos*3, 0, 0)
                 end
             end
         end
