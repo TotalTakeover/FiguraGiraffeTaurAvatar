@@ -1,22 +1,22 @@
 -- Required scripts
-local giraffeParts = require("lib.GroupIndex")(models.models.Giraffe)
-local pose         = require("scripts.Posing")
+local parts = require("lib.PartsAPI")
+local pose  = require("scripts.Posing")
 
 -- Config setup
-config:name("Giraffe")
+config:name("GiraffeTaur")
 local camPos       = config:load("CameraPos") or false
 local savedServers = config:load("CameraServers") or {}
 
 -- Get server id
 local serverData = client:getServerData()
-local serverId   = serverData.ip and serverData.ip or serverData.name
+local serverId   = serverData.ip and serverData.ip or serverData.name or "none"
 
 -- Establish server, and set eyePos to server
 savedServers[serverId] = savedServers[serverId] or false
 local eyePos = savedServers[serverId]
 
 -- Variable setup
-local head = giraffeParts.Head
+local head = parts.group.Head
 
 -- Sleep rotations
 local dirRot = {
@@ -122,7 +122,7 @@ function events.RENDER(delta, context)
 		
 		-- Check for block obstruction
 		local obstructed = false
-		local cameraPos = giraffeParts.Body:partToWorldMatrix():apply() + vec(0, 0.2, 0) + client:getCameraDir() * 0.1
+		local cameraPos = parts.group.Body:partToWorldMatrix():apply() + vec(0, 0.2, 0) + client:getCameraDir() * 0.1
 		local blockPos = cameraPos:copy():floor()
 		local block = world.getBlockState(blockPos)
 		local boxes = block:getCollisionShape()
@@ -185,7 +185,8 @@ if not host:isHost() then return end
 
 -- Required scripts
 local itemCheck = require("lib.ItemCheck")
-local color     = require("scripts.ColorProperties")
+local s, color = pcall(require, "scripts.ColorProperties")
+if not s then color = {} end
 
 -- Sync on tick
 function events.TICK()
@@ -200,35 +201,35 @@ end
 local t = {}
 
 -- Actions
-t.posPage = action_wheel:newAction()
+t.posAct = action_wheel:newAction()
 	:item(itemCheck("skeleton_skull"))
-	:toggleItem(itemCheck("player_head{'SkullOwner':'"..avatar:getEntityName().."'}"))
+	:toggleItem(itemCheck("player_head{SkullOwner:"..avatar:getEntityName().."}"))
 	:onToggle(pings.setCameraPos)
 	:toggled(camPos)
 
-t.eyePage = action_wheel:newAction()
+t.eyeAct = action_wheel:newAction()
 	:item(itemCheck("ender_pearl"))
 	:toggleItem(itemCheck("ender_eye"))
 	:onToggle(pings.setCameraEye)
 	:toggled(eyePos)
 
 -- Update actions
-function events.TICK()
+function events.RENDER(delta, context)
 	
 	if action_wheel:isEnabled() then
-		t.posPage
+		t.posAct
 			:title(toJson
 				{"",
 				{text = "Camera Position Toggle\n\n", bold = true, color = color.primary},
-				{text = "Sets the camera position to where your avatar's head is.\n\n", color = color.secondary},
+				{text = "Sets the camera position to where your avatar\'s head is.\n\n", color = color.secondary},
 				{text = "To prevent x-ray, the camera will reset to its default position if inside a block.", color = "red"}}
 			)
 		
-		t.eyePage
+		t.eyeAct
 			:title(toJson
 				{"",
 				{text = "Eye Position Toggle\n\n", bold = true, color = color.primary},
-				{text = "Sets the eye position to match the avatar's head.\nRequires camera position toggle.\n\n", color = color.secondary},
+				{text = "Sets the eye position to match the avatar\'s head.\nRequires camera position toggle.\n\n", color = color.secondary},
 				{text = "WARNING: ", bold = true, color = "dark_red"},
 				{text = "This feature is dangerous!\nIt can and will be flagged on servers with anticheat!\nFurthermore, \"In Wall\" damage is possible. (The x-ray prevention will try to avoid this)\nThis setting will only be saved on a \"Per-Server\" basis.\n\nPlease use with extreme caution!", color = "red"}}
 			)

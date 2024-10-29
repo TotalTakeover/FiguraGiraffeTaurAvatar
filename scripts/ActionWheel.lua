@@ -3,12 +3,24 @@ if not host:isHost() then return end
 
 -- Required scripts
 local itemCheck = require("lib.ItemCheck")
-local avatar    = require("scripts.Player")
---local armor     = require("scripts.Armor")
-local camera    = require("scripts.CameraControl")
---local anims     = require("scripts.Anims")
---local squapi    = require("scripts.SquishyAnims")
-local color     = require("scripts.ColorProperties")
+
+local s, avatar = pcall(require, "scripts.Player")
+if not s then avatar = {} end
+
+local s, armor = pcall(require, "scripts.Armor")
+if not s then armor = {} end
+
+local s, camera = pcall(require, "scripts.CameraControl")
+if not s then camera = {} end
+
+local s, anims = pcall(require, "scripts.Anims")
+if not s then anims = {} end
+
+local s, squapi = pcall(require, "scripts.SquishyAnims")
+if not s then squapi = {} end
+
+local s, color = pcall(require, "scripts.ColorProperties")
+if not s then color = {} end
 
 -- Logs pages for navigation
 local navigation = {}
@@ -31,17 +43,17 @@ end
 -- Page setups
 local pages = {
 	
-	main             = action_wheel:newPage("Main"),
-	avatar           = action_wheel:newPage("Avatar"),
-	armor            = action_wheel:newPage("Armor"),
-	camera           = action_wheel:newPage("Camera"),
-	giraffe          = action_wheel:newPage("Giraffe"),
-	anims            = action_wheel:newPage("Anims")
+	main    = action_wheel:newPage("Main"),
+	avatar  = action_wheel:newPage("Avatar"),
+	armor   = action_wheel:newPage("Armor"),
+	camera  = action_wheel:newPage("Camera"),
+	giraffe = action_wheel:newPage("Giraffe"),
+	anims   = action_wheel:newPage("Anims")
 	
 }
 
 -- Page actions
-local pageActions = {
+local pageActs = {
 	
 	avatar = action_wheel:newAction()
 		:item(itemCheck("armor_stand"))
@@ -61,40 +73,40 @@ local pageActions = {
 	
 	camera = action_wheel:newAction()
 		:item(itemCheck("redstone"))
-		:onLeftClick(function() descend(pages.camera) end)
+		:onLeftClick(function() descend(pages.camera) end),
 	
 }
 
 -- Update actions
-function events.TICK()
+function events.RENDER(delta, context)
 	
 	if action_wheel:isEnabled() then
-		pageActions.avatar
+		pageActs.avatar
 			:title(toJson
 				{text = "Avatar Settings", bold = true, color = color.primary}
 			)
 		
-		pageActions.giraffe
+		pageActs.giraffe
 			:title(toJson
 				{text = "Giraffe Settings", bold = true, color = color.primary}
 			)
 		
-		pageActions.anims
+		pageActs.anims
 			:title(toJson
 				{text = "Animations", bold = true, color = color.primary}
 			)
 		
-		pageActions.armor
+		pageActs.armor
 			:title(toJson
 				{text = "Armor Settings", bold = true, color = color.primary}
 			)
 		
-		pageActions.camera
+		pageActs.camera
 			:title(toJson
 				{text = "Camera Settings", bold = true, color = color.primary}
 			)
 		
-		for _, page in pairs(pageActions) do
+		for _, page in pairs(pageActs) do
 			page:hoverColor(color.hover)
 		end
 		
@@ -103,7 +115,7 @@ function events.TICK()
 end
 
 -- Action back to previous page
-local backAction = action_wheel:newAction()
+local backAct = action_wheel:newAction()
 	:title(toJson
 		{text = "Go Back?", bold = true, color = "red"}
 	)
@@ -116,39 +128,38 @@ action_wheel:setPage(pages.main)
 
 -- Main actions
 pages.main
-	:action( -1, pageActions.avatar)
-	:action( -1, pageActions.giraffe)
-	:action( -1, pageActions.anims)
+	:action( -1, pageActs.avatar)
+	:action( -1, pageActs.giraffe)
+	:action( -1, pageActs.anims)
 
 -- Avatar actions
 pages.avatar
-	:action( -1, avatar.vanillaSkinPage)
-	:action( -1, avatar.modelPage)
-	:action( -1, pageActions.armor)
-	:action( -1, pageActions.camera)
-	:action( -1, backAction)
+	:action( -1, avatar.vanillaSkinAct)
+	:action( -1, avatar.modelAct)
+	:action( -1, pageActs.armor)
+	:action( -1, pageActs.camera)
+	:action( -1, backAct)
 
 -- Armor actions
 pages.armor
-	--:action( -1, armor.allPage)
-	--:action( -1, armor.bootsPage)
-	--:action( -1, armor.leggingsPage)
-	--:action( -1, armor.chestplatePage)
-	--:action( -1, armor.helmetPage)
-	:action( -1, backAction)
+	:action( -1, armor.allAct)
+	:action( -1, armor.bootsAct)
+	:action( -1, armor.leggingsAct)
+	:action( -1, armor.chestplateAct)
+	:action( -1, armor.helmetAct)
+	:action( -1, backAct)
 
 -- Camera actions
 pages.camera
-	:action( -1, camera.posPage)
-	:action( -1, camera.eyePage)
-	:action( -1, backAction)
+	:action( -1, camera.posAct)
+	:action( -1, camera.eyeAct)
+	:action( -1, backAct)
 
 -- Giraffe actions
 pages.giraffe
-	:action( -1, backAction)
+	:action( -1, backAct)
 
 -- Animation actions
 pages.anims
-	--:action( -1, anims.rearUpPage)
-	--:action( -1, squapi.armsPage)
-	:action( -1, backAction)
+	:action( -1, squapi.armsAct)
+	:action( -1, backAct)
