@@ -4097,7 +4097,7 @@
 			"folder": "",
 			"namespace": "",
 			"id": "1",
-			"group": "",
+			"group": "43379f7c-43f1-53d6-e1dd-2a61d27b7d7a",
 			"width": 64,
 			"height": 64,
 			"uv_width": 64,
@@ -4125,7 +4125,7 @@
 			"folder": "block",
 			"namespace": "",
 			"id": "30",
-			"group": "",
+			"group": "43379f7c-43f1-53d6-e1dd-2a61d27b7d7a",
 			"width": 128,
 			"height": 128,
 			"uv_width": 128,
@@ -4153,7 +4153,7 @@
 			"folder": "block",
 			"namespace": "",
 			"id": "31",
-			"group": "",
+			"group": "43379f7c-43f1-53d6-e1dd-2a61d27b7d7a",
 			"width": 32,
 			"height": 32,
 			"uv_width": 32,
@@ -4181,7 +4181,7 @@
 			"folder": "",
 			"namespace": "",
 			"id": "2",
-			"group": "",
+			"group": "43379f7c-43f1-53d6-e1dd-2a61d27b7d7a",
 			"width": 64,
 			"height": 32,
 			"uv_width": 64,
@@ -4202,6 +4202,20 @@
 			"uuid": "5f9073d8-8675-b328-d0cd-bb9fb450ea8c",
 			"relative_path": "textures/misc/cape.png",
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAAAXNSR0IArs4c6QAAAFBJREFUaEPt1QERADAMArHi33SFfOagHBm7+Fv8/hOABsQTQCBeAJ8gAgjEE0AgXgArgAAC8QQQiBfACiCAQDwBBOIFsAIIIBBPAIF4AazAAzJOACHu+VYgAAAAAElFTkSuQmCC"
+		}
+	],
+	"texture_groups": [
+		{
+			"uuid": "43379f7c-43f1-53d6-e1dd-2a61d27b7d7a",
+			"name": "Main"
+		},
+		{
+			"uuid": "f9a30363-4ef2-bb77-afb9-66d5d85bb7e5",
+			"name": "Armor"
+		},
+		{
+			"uuid": "d5b5f538-7608-ea47-7f8b-099e78d1a4a6",
+			"name": "Armor Trims"
 		}
 	],
 	"animations": [
