@@ -2,14 +2,18 @@
 	"name": "Giraffe Taur",
 	"description": "\"Big ol' stretch.\"",
 	"authors": [
-		"\nPsycho Breadstick (Model Designer, QA, Origin)\n",
-		"Katt (Updated scripts, APIs)\n",
-		"Grandpa Scout (APIs)\n",
-		"Jimmy (QA, Animation code)\n",
-		"Squishy (APIs)\n",
-		"4P5 (APIs, Better Action Wheel)\n",
-		"PoolloverNathan (JSONs)\n",
-		"Total (Avatar Maker)\n"
+		"Psycho Breadstick",
+		"Total",
+		"§f§nCredits§r",
+		"Jimmy",
+		"PoolloverNathan",
+		"§f§nLibraries§r",
+		"Grandpa Scout (GSAnimBlend, GSCarrier)",
+		"Squishy (SquAPI)",
+		"Katt (OriginsAPI, KattArmor, DynamicCrosshair)",
+		"4P5 (GroundCheck)",
+		"Manuel_ (Molang Conversions)",
+		"Auria (Molang Conversions)"
 	],
 	"version": "0.1.4"
 }

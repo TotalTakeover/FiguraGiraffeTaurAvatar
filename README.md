@@ -3,14 +3,20 @@
 This Figura avatar is a template designed around turning the user into a Giraffe Taur.
 
 ### Authors:
-- Psycho Breadstick (Model Designer, QA, Origin)
-- Katt (Updated scripts, APIs)
-- Grandpa Scout (APIs)
-- Jimmy (QA, Animation code)
-- Squishy (APIs)
-- 4P5 (APIs, Better Action Wheel)
-- PoolloverNathan (JSONs)
-- Total (Avatar Maker)
+- Psycho Breadstick
+- Total
+
+### Credits:
+- Jimmy
+- PoolloverNathan
+
+### Libraries:
+- Grandpa Scout (GSAnimBlend, GSCarrier)
+- Squishy (SquAPI)
+- Katt (OriginsAPI, KattArmor, DynamicCrosshair)
+- 4P5 (GroundCheck)
+- Manuel (Molang Conversions)
+- Auria (Molang Conversions)
 
 ## Features
 Section under construction
