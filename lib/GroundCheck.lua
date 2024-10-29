@@ -5,7 +5,7 @@ local function overlaps(box1_min, box1_max, box2_min, box2_max)
 end
 
 local CLEARANCE = 0.2
-local function onGround(pos)
+local function onGround()
     local pos = player:getPos()
     local hitbox = player:getBoundingBox()
     local min = pos - hitbox.x_z / 2 - vec(0, CLEARANCE, 0)
