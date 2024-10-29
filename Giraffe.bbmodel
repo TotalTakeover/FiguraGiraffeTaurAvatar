@@ -2112,7 +2112,6 @@
 			"to": [1.5, 36, 13],
 			"autouv": 0,
 			"color": 0,
-			"rotation": [0, 0, 0],
 			"origin": [0, 0, 0],
 			"uv_offset": [42, 36],
 			"faces": {
@@ -3214,7 +3213,7 @@
 								{
 									"name": "Neck1",
 									"origin": [0, 35, -14.5],
-									"rotation": [-20, 0, 0],
+									"rotation": [-30, 0, 0],
 									"color": 0,
 									"uuid": "fd9a4afe-fb6f-8f68-97b0-c0df2dda104f",
 									"export": true,
@@ -3229,6 +3228,7 @@
 										{
 											"name": "Neck2",
 											"origin": [0, 48, -13.75],
+											"rotation": [10, 0, 0],
 											"color": 0,
 											"uuid": "ff258808-16a5-0620-23de-b53ec2f24efa",
 											"export": true,
@@ -3243,6 +3243,7 @@
 												{
 													"name": "Neck3",
 													"origin": [0, 63, -13.75],
+													"rotation": [10, 0, 0],
 													"color": 0,
 													"uuid": "01f72cc0-1ed1-86ba-b5b5-27c8cd6401e6",
 													"export": true,
@@ -3257,7 +3258,7 @@
 														{
 															"name": "UpperBody",
 															"origin": [0, 76, -13.75],
-															"rotation": [20, 0, 0],
+															"rotation": [10, 0, 0],
 															"color": 0,
 															"uuid": "56b7e67b-665c-6ffb-8b6c-76947a351ff3",
 															"export": true,
@@ -4241,7 +4242,7 @@
 							"data_points": [
 								{
 									"x": "0",
-									"y": -2.5,
+									"y": "-2",
 									"z": "0"
 								}
 							],
@@ -4260,7 +4261,7 @@
 							"channel": "rotation",
 							"data_points": [
 								{
-									"x": -60,
+									"x": -70,
 									"y": "0",
 									"z": "0"
 								}
@@ -4275,8 +4276,8 @@
 							"data_points": [
 								{
 									"x": "0",
-									"y": "0",
-									"z": -5
+									"y": "1",
+									"z": "-7"
 								}
 							],
 							"uuid": "c0f8db53-ec80-542a-bcb2-02f4946e7607",
