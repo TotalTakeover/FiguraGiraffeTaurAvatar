@@ -13,6 +13,7 @@ local anims = animations.Giraffe
 config:name("GiraffeTaur")
 local earFlick = config:load("SquapiEarFlick")
 local armsMove = config:load("SquapiArmsMove") or false
+if earFlick == nil then earFlick = true end
 
 -- Calculate parent's rotations
 local function calculateParentRot(m)
