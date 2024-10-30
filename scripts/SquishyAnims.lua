@@ -31,7 +31,6 @@ local leftArmLerp  = lerp:new(0.5, armsMove and 1 or 0)
 local rightArmLerp = lerp:new(0.5, armsMove and 1 or 0)
 local legLerp      = lerp:new(0.5, 1)
 
-
 -- Squishy ears
 local ears = squapi.ear:new(
 	parts.group.LeftEar,
