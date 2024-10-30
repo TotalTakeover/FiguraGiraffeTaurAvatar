@@ -3869,20 +3869,6 @@
 																			"children": [
 																				{
 																					"name": "LeftOssicone",
-																					"origin": [2, 95, -11.25],
-																					"rotation": [35, 0, 0],
-																					"color": 0,
-																					"uuid": "39eb6965-9209-b764-740b-a57033abfea1",
-																					"export": true,
-																					"mirror_uv": false,
-																					"isOpen": false,
-																					"locked": false,
-																					"visibility": true,
-																					"autouv": 0,
-																					"children": ["c99d9f78-10f6-fe18-15cf-9d1b19bafc21", "db6f3d7f-3cfd-354b-756a-6032799fd3cc"]
-																				},
-																				{
-																					"name": "RightOssicone",
 																					"origin": [-2, 95, -11.25],
 																					"rotation": [35, 0, 0],
 																					"color": 0,
@@ -3894,6 +3880,20 @@
 																					"visibility": true,
 																					"autouv": 0,
 																					"children": ["83c36672-807b-1b24-f127-9487a66f21f8", "3e0b192b-97c5-2e7f-659a-a6d87fc4a688"]
+																				},
+																				{
+																					"name": "RightOssicone",
+																					"origin": [2, 95, -11.25],
+																					"rotation": [35, 0, 0],
+																					"color": 0,
+																					"uuid": "39eb6965-9209-b764-740b-a57033abfea1",
+																					"export": true,
+																					"mirror_uv": false,
+																					"isOpen": false,
+																					"locked": false,
+																					"visibility": true,
+																					"autouv": 0,
+																					"children": ["c99d9f78-10f6-fe18-15cf-9d1b19bafc21", "db6f3d7f-3cfd-354b-756a-6032799fd3cc"]
 																				}
 																			]
 																		},
@@ -4665,20 +4665,6 @@
 					"children": [
 						{
 							"name": "LeftOssiconeSkull",
-							"origin": [2, 7, 3],
-							"rotation": [35, 0, 0],
-							"color": 0,
-							"uuid": "6f8f5a08-2a9c-fc13-b191-7f83842859c2",
-							"export": true,
-							"mirror_uv": false,
-							"isOpen": false,
-							"locked": false,
-							"visibility": false,
-							"autouv": 0,
-							"children": ["cfb8ee3e-8325-b944-7db4-a7b1f7f22aab", "98da3ecf-aad3-a6ff-1f0d-2b42e72cfc0b"]
-						},
-						{
-							"name": "RightOssiconeSkull",
 							"origin": [-2, 7, 3],
 							"rotation": [35, 0, 0],
 							"color": 0,
@@ -4690,6 +4676,20 @@
 							"visibility": false,
 							"autouv": 0,
 							"children": ["9222c34f-857d-17ad-0c8a-f6d04ed746ad", "fbe920d4-f439-1991-2f17-a5bad8cf7235"]
+						},
+						{
+							"name": "RightOssiconeSkull",
+							"origin": [2, 7, 3],
+							"rotation": [35, 0, 0],
+							"color": 0,
+							"uuid": "6f8f5a08-2a9c-fc13-b191-7f83842859c2",
+							"export": true,
+							"mirror_uv": false,
+							"isOpen": false,
+							"locked": false,
+							"visibility": false,
+							"autouv": 0,
+							"children": ["cfb8ee3e-8325-b944-7db4-a7b1f7f22aab", "98da3ecf-aad3-a6ff-1f0d-2b42e72cfc0b"]
 						}
 					]
 				}
