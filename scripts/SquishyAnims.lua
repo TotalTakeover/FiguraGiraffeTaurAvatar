@@ -236,11 +236,9 @@ function events.RENDER(delta, context)
 		:pos(parts.group.RightArm:getPos() * vec(1, 1, -1))
 		:visible(not firstPerson)
 	
-	--[[
 	-- Set visible if in first person
 	parts.group.LeftArmFP:visible(firstPerson)
 	parts.group.RightArmFP:visible(firstPerson)
-	--]]
 	
 	-- Set upperbody to offset rot and crouching pivot point
 	parts.group.UpperBody
