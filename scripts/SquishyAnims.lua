@@ -31,7 +31,7 @@ local leftArmLerp  = lerp:new(0.5, armsMove and 1 or 0)
 local rightArmLerp = lerp:new(0.5, armsMove and 1 or 0)
 local legLerp      = lerp:new(0.5, 1)
 
---[[
+
 -- Squishy ears
 local ears = squapi.ear:new(
 	parts.group.LeftEar,
@@ -44,7 +44,7 @@ local ears = squapi.ear:new(
 	0.05,     -- Stiffness (0.05)
 	0.9       -- Bounce (0.9)
 )
---]]
+
 
 -- Tails table
 local tailParts = {
@@ -194,10 +194,8 @@ function events.TICK()
 		head.strength[i] = (headStrength / #head.strength) * (bodyShouldBend and 1 or 0)
 	end
 	
-	--[[
 	-- Control ear flick based on variables
 	ears.doEarFlick = earFlick
-	--]]
 	
 end
 
