@@ -2708,6 +2708,7 @@
 			"to": [2, 24, 13.25],
 			"autouv": 0,
 			"color": 0,
+			"inflate": -0.01,
 			"origin": [0, 0, 0],
 			"uv_offset": [42, 36],
 			"faces": {
@@ -4363,7 +4364,7 @@
 			"autouv": 0,
 			"color": 0,
 			"visibility": false,
-			"inflate": 0.25,
+			"inflate": 0.24,
 			"origin": [0, 0, 0],
 			"uv_offset": [42, 36],
 			"faces": {
