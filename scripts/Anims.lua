@@ -83,8 +83,8 @@ if not host:isHost() then return end
 
 -- Required scripts
 local itemCheck = require("lib.ItemCheck")
-local s, color = pcall(require, "scripts.ColorProperties")
-if not s then color = {} end
+local s, c = pcall(require, "scripts.ColorProperties")
+if not s then c = {} end
 
 -- Sit keybind
 local sitBind   = config:load("AnimSitKeybind") or "key.keyboard.keypad.1"
@@ -116,12 +116,12 @@ function events.RENDER(delta, context)
 	if action_wheel:isEnabled() then
 		t.sitAct
 			:title(toJson
-				{text = "Play Sit animation", bold = true, color = color.primary}
+				{text = "Play Sit animation", bold = true, color = c.primary}
 			)
 			:toggled(anims.sit:isPlaying())
 		
 		for _, page in pairs(t) do
-			page:hoverColor(color.hover):toggleColor(color.active)
+			page:hoverColor(c.hover):toggleColor(c.active)
 		end
 		
 	end
