@@ -91,7 +91,7 @@ function events.RENDER(delta, context)
 		else
 			
 			-- else, slightly lower camera offset
-			posOffset  = posOffset - vec(0, (pose.sleep or pose.elytra) and 0 or 16, pose.sleep and -38 or 0) / 16
+			posOffset  = posOffset - vec(0, (pose.sleep or pose.elytra) and 0 or 16, pose.sleep and -18 or 0) / 16
 			nameOffset = posOffset - vec(0, (pose.sleep and -10 or -2) * modelEyeHeight, pose.sleep and 0 or -20) / 16
 			
 			-- else, rotate camera offset on x axis
@@ -144,9 +144,6 @@ function events.RENDER(delta, context)
 		-- Nameplate placement
 		nameplate.ENTITY
 			:pivot(nameOffset)
-		
-		-- Reverse camera when sleeping
-		renderer:offsetCameraRot(pose.sleep and renderer:isFirstPerson() and vec(0, 180, 0) or 0)
 		
 	end
 	

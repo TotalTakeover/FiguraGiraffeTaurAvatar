@@ -191,7 +191,7 @@ function events.TICK()
 	taur.target         = (onGround or effects.cF) and 0 or taur.target
 	
 	-- Body lean overrides
-	local bodyShouldBend = not pose.crouch
+	local bodyShouldBend = not (pose.crouch or pose.sleep)
 	for i in ipairs(head.strength) do
 		head.strength[i] = (headStrength / #head.strength) * (bodyShouldBend and 1 or 0)
 	end

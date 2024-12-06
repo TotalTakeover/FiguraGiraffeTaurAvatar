@@ -38,6 +38,7 @@ function events.TICK()
 	local sprinting = player:isSprinting()
 	
 	-- Animation states
+	local sleep = pose.sleep
 	local isAct = anims.sit:isPlaying()
 	
 	-- Animation actions
@@ -49,9 +50,43 @@ function events.TICK()
 		anims.sit:stop()
 	end
 	
+	-- Animation
+	anims.sleep:playing(sleep)
+	
 end
 
+-- Sleep rotations
+local dirRot = {
+	north = 0,
+	east  = 270,
+	south = 180,
+	west  = 90
+}
+
 function events.RENDER(delta, context)
+	
+	-- Sleep rotations
+	if pose.sleep then
+		
+		-- Disable vanilla rotation
+		renderer:rootRotationAllowed(false)
+		
+		-- Find block
+		local block = world.getBlockState(player:getPos())
+		local sleepRot = dirRot[block.properties["facing"]]
+		
+		-- Apply
+		models:rot(0, sleepRot, 0)
+		
+	else
+		
+		-- Enable vanilla rotation
+		renderer:rootRotationAllowed(true)
+		
+		-- Reset
+		models:rot(0)
+		
+	end
 	
 	-- Parrot rot offset
 	for _, parrot in pairs(parrots) do
