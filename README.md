@@ -20,5 +20,3 @@ This Figura avatar is a template designed around turning the user into a Giraffe
 
 ## Features
 Section under construction
-
-[<img src="https://img.youtube.com/vi/<id>/maxresdefault.jpg" alt="image" width="300" height="auto">](https://youtu.be/<id>)
