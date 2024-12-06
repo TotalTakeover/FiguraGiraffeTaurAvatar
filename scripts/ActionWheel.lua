@@ -43,12 +43,11 @@ end
 -- Page setups
 local pages = {
 	
-	main    = action_wheel:newPage("Main"),
-	avatar  = action_wheel:newPage("Avatar"),
-	armor   = action_wheel:newPage("Armor"),
-	camera  = action_wheel:newPage("Camera"),
-	giraffe = action_wheel:newPage("Giraffe"),
-	anims   = action_wheel:newPage("Anims")
+	main   = action_wheel:newPage("Main"),
+	avatar = action_wheel:newPage("Avatar"),
+	armor  = action_wheel:newPage("Armor"),
+	camera = action_wheel:newPage("Camera"),
+	anims  = action_wheel:newPage("Anims")
 	
 }
 
@@ -58,10 +57,6 @@ local pageActs = {
 	avatar = action_wheel:newAction()
 		:item(itemCheck("armor_stand"))
 		:onLeftClick(function() descend(pages.avatar) end),
-	
-	giraffe = action_wheel:newAction()
-		:item(itemCheck("saddle"))
-		:onLeftClick(function() descend(pages.giraffe) end),
 	
 	anims = action_wheel:newAction()
 		:item(itemCheck("jukebox"))
@@ -84,11 +79,6 @@ function events.RENDER(delta, context)
 		pageActs.avatar
 			:title(toJson(
 				{text = "Avatar Settings", bold = true, color = c.primary}
-			))
-		
-		pageActs.giraffe
-			:title(toJson(
-				{text = "Giraffe Settings", bold = true, color = c.primary}
 			))
 		
 		pageActs.anims
@@ -153,10 +143,6 @@ pages.armor
 pages.camera
 	:action( -1, camera.posAct)
 	:action( -1, camera.eyeAct)
-	:action( -1, backAct)
-
--- Giraffe actions
-pages.giraffe
 	:action( -1, backAct)
 
 -- Animation actions
