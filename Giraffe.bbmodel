@@ -7437,6 +7437,32 @@
 										"f4485a5d-9c2c-b422-3919-23a3a12ec753",
 										"d03384a4-daac-4115-990e-358a4db0a99a"
 									]
+								},
+								{
+									"name": "Seat1",
+									"origin": [0, 40, -6],
+									"color": 0,
+									"uuid": "2acc067b-79fb-1dc2-9bb9-f75338219e33",
+									"export": true,
+									"mirror_uv": false,
+									"isOpen": false,
+									"locked": false,
+									"visibility": true,
+									"autouv": 0,
+									"children": []
+								},
+								{
+									"name": "Seat2",
+									"origin": [0, 39, 6],
+									"color": 0,
+									"uuid": "f906edca-e4ca-1f07-5f1d-c047c15f5b4c",
+									"export": true,
+									"mirror_uv": false,
+									"isOpen": false,
+									"locked": false,
+									"visibility": true,
+									"autouv": 0,
+									"children": []
 								}
 							]
 						},
