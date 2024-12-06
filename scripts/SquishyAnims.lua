@@ -117,28 +117,28 @@ local rightArmStrength = rightArm.strength
 -- Squishy vanilla legs
 local frontLeftLeg = squapi.leg:new(
 	parts.group.FrontLeftLeg,
-	0.25,  -- Strength (0.25)
+	0.3,  -- Strength (0.25)
 	false, -- Right Leg (false)
 	false  -- Keep Position (false)
 )
 
 local frontRightLeg = squapi.leg:new(
 	parts.group.FrontRightLeg,
-	0.25, -- Strength (0.25)
+	0.3, -- Strength (0.25)
 	true, -- Right Leg (true)
 	false -- Keep Position (false)
 )
 
 local backLeftLeg = squapi.leg:new(
 	parts.group.BackLeftLeg,
-	0.25, -- Strength (0.25)
+	0.3, -- Strength (0.25)
 	true, -- Right Leg (true)
 	false -- Keep Position (false)
 )
 
 local backRightLeg = squapi.leg:new(
 	parts.group.BackRightLeg,
-	0.25,  -- Strength (0.25)
+	0.3,  -- Strength (0.25)
 	false, -- Right Leg (false)
 	false  -- Keep Position (false)
 )
@@ -246,7 +246,7 @@ function events.RENDER(delta, context)
 		:offsetPivot(anims.crouch:isPlaying() and -parts.group.UpperBody:getAnimPos() or 0)
 	
 	parts.group.NeckPivot
-		:offsetRot(-parts.group.LowerBody:getRot())
+		:rot(-parts.group.LowerBody:getRot())
 	
 	-- Offset smooth torso in various parts
 	-- Note: acts strangely with `parts.group.body`
