@@ -52,6 +52,10 @@ giraffeArmor.Materials.turtle
 	:setTexture(textures["textures.armor.turtleHelmet"] or textures["Giraffe.turtleHelmet"])
 
 -- Trims
+-- Bolt
+giraffeArmor.TrimPatterns.bolt
+	:setTexture(textures["textures.armor.trims.boltTrim"] or textures["Giraffe.boltTrim"])
+
 -- Coast
 giraffeArmor.TrimPatterns.coast
 	:setTexture(textures["textures.armor.trims.coastTrim"] or textures["Giraffe.coastTrim"])
@@ -63,6 +67,10 @@ giraffeArmor.TrimPatterns.dune
 -- Eye
 giraffeArmor.TrimPatterns.eye
 	:setTexture(textures["textures.armor.trims.eyeTrim"] or textures["Giraffe.eyeTrim"])
+
+-- Flow
+giraffeArmor.TrimPatterns.flow
+	:setTexture(textures["textures.armor.trims.flowTrim"] or textures["Giraffe.flowTrim"])
 
 -- Host
 giraffeArmor.TrimPatterns.host
