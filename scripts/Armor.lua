@@ -1,119 +1,119 @@
 -- Required scripts
-local parts     = require("lib.PartsAPI")
-local kattArmor = require("lib.KattArmor")()
+local parts        = require("lib.PartsAPI")
+local giraffeArmor = require("lib.KattArmor")()
 
 -- Setting the leggings to layer 1
-kattArmor.Armor.Leggings:setLayer(1)
+giraffeArmor.Armor.Leggings:setLayer(1)
 
 -- Armor parts
-kattArmor.Armor.Helmet
+giraffeArmor.Armor.Helmet
 	:addParts(table.unpack(parts:createTable(function(part) return part:getName() == "Helmet" end)))
 	:addTrimParts(table.unpack(parts:createTable(function(part) return part:getName() == "HelmetTrim" end)))
-kattArmor.Armor.Chestplate
+giraffeArmor.Armor.Chestplate
 	:addParts(table.unpack(parts:createTable(function(part) return part:getName() == "Chestplate" end)))
 	:addTrimParts(table.unpack(parts:createTable(function(part) return part:getName() == "ChestplateTrim" end)))
-kattArmor.Armor.Leggings
+giraffeArmor.Armor.Leggings
 	:addParts(table.unpack(parts:createTable(function(part) return part:getName() == "Leggings" end)))
 	:addTrimParts(table.unpack(parts:createTable(function(part) return part:getName() == "LeggingsTrim" end)))
-kattArmor.Armor.Boots
+giraffeArmor.Armor.Boots
 	:addParts(table.unpack(parts:createTable(function(part) return part:getName() == "Boot" end)))
 	:addTrimParts(table.unpack(parts:createTable(function(part) return part:getName() == "BootTrim" end)))
 
 -- Leather armor
-kattArmor.Materials.leather
+giraffeArmor.Materials.leather
 	:setTexture(textures["textures.armor.leatherArmor"] or textures["Giraffe.leatherArmor"])
-	:addParts(kattArmor.Armor.Helmet,     table.unpack(parts:createTable(function(part) return part:getName() == "HelmetLeather" end)))
-	:addParts(kattArmor.Armor.Chestplate, table.unpack(parts:createTable(function(part) return part:getName() == "ChestplateLeather" end)))
-	:addParts(kattArmor.Armor.Leggings,   table.unpack(parts:createTable(function(part) return part:getName() == "LeggingsLeather" end)))
-	:addParts(kattArmor.Armor.Boots,      table.unpack(parts:createTable(function(part) return part:getName() == "BootLeather" end)))
+	:addParts(giraffeArmor.Armor.Helmet,     table.unpack(parts:createTable(function(part) return part:getName() == "HelmetLeather" end)))
+	:addParts(giraffeArmor.Armor.Chestplate, table.unpack(parts:createTable(function(part) return part:getName() == "ChestplateLeather" end)))
+	:addParts(giraffeArmor.Armor.Leggings,   table.unpack(parts:createTable(function(part) return part:getName() == "LeggingsLeather" end)))
+	:addParts(giraffeArmor.Armor.Boots,      table.unpack(parts:createTable(function(part) return part:getName() == "BootLeather" end)))
 
 -- Chainmail armor
-kattArmor.Materials.chainmail
+giraffeArmor.Materials.chainmail
 	:setTexture(textures["textures.armor.chainmailArmor"] or textures["Giraffe.chainmailArmor"])
 
 -- Iron armor
-kattArmor.Materials.iron
+giraffeArmor.Materials.iron
 	:setTexture(textures["textures.armor.ironArmor"] or textures["Giraffe.ironArmor"])
 
 -- Golden armor
-kattArmor.Materials.golden
+giraffeArmor.Materials.golden
 	:setTexture(textures["textures.armor.goldenArmor"] or textures["Giraffe.goldenArmor"])
 
 -- Diamond armor
-kattArmor.Materials.diamond
+giraffeArmor.Materials.diamond
 	:setTexture(textures["textures.armor.diamondArmor"] or textures["Giraffe.diamondArmor"])
 
 -- Netherite armor
-kattArmor.Materials.netherite
+giraffeArmor.Materials.netherite
 	:setTexture(textures["textures.armor.netheriteArmor"] or textures["Giraffe.netheriteArmor"])
 
 -- Turtle helmet
-kattArmor.Materials.turtle
+giraffeArmor.Materials.turtle
 	:setTexture(textures["textures.armor.turtleHelmet"] or textures["Giraffe.turtleHelmet"])
 
 -- Trims
 -- Coast
-kattArmor.TrimPatterns.coast
+giraffeArmor.TrimPatterns.coast
 	:setTexture(textures["textures.armor.trims.coastTrim"] or textures["Giraffe.coastTrim"])
 
 -- Dune
-kattArmor.TrimPatterns.dune
+giraffeArmor.TrimPatterns.dune
 	:setTexture(textures["textures.armor.trims.duneTrim"] or textures["Giraffe.duneTrim"])
 
 -- Eye
-kattArmor.TrimPatterns.eye
+giraffeArmor.TrimPatterns.eye
 	:setTexture(textures["textures.armor.trims.eyeTrim"] or textures["Giraffe.eyeTrim"])
 
 -- Host
-kattArmor.TrimPatterns.host
+giraffeArmor.TrimPatterns.host
 	:setTexture(textures["textures.armor.trims.hostTrim"] or textures["Giraffe.hostTrim"])
 
 -- Raiser
-kattArmor.TrimPatterns.raiser
+giraffeArmor.TrimPatterns.raiser
 	:setTexture(textures["textures.armor.trims.raiserTrim"] or textures["Giraffe.raiserTrim"])
 
 -- Rib
-kattArmor.TrimPatterns.rib
+giraffeArmor.TrimPatterns.rib
 	:setTexture(textures["textures.armor.trims.ribTrim"] or textures["Giraffe.ribTrim"])
 
 -- Sentry
-kattArmor.TrimPatterns.sentry
+giraffeArmor.TrimPatterns.sentry
 	:setTexture(textures["textures.armor.trims.sentryTrim"] or textures["Giraffe.sentryTrim"])
 
 -- Shaper
-kattArmor.TrimPatterns.shaper
+giraffeArmor.TrimPatterns.shaper
 	:setTexture(textures["textures.armor.trims.shaperTrim"] or textures["Giraffe.shaperTrim"])
 
 -- Silence
-kattArmor.TrimPatterns.silence
+giraffeArmor.TrimPatterns.silence
 	:setTexture(textures["textures.armor.trims.silenceTrim"] or textures["Giraffe.silenceTrim"])
 
 -- Snout
-kattArmor.TrimPatterns.snout
+giraffeArmor.TrimPatterns.snout
 	:setTexture(textures["textures.armor.trims.snoutTrim"] or textures["Giraffe.snoutTrim"])
 
 -- Spire
-kattArmor.TrimPatterns.spire
+giraffeArmor.TrimPatterns.spire
 	:setTexture(textures["textures.armor.trims.spireTrim"] or textures["Giraffe.spireTrim"])
 
 -- Tide
-kattArmor.TrimPatterns.tide
+giraffeArmor.TrimPatterns.tide
 	:setTexture(textures["textures.armor.trims.tideTrim"] or textures["Giraffe.tideTrim"])
 
 -- Vex
-kattArmor.TrimPatterns.vex
+giraffeArmor.TrimPatterns.vex
 	:setTexture(textures["textures.armor.trims.vexTrim"] or textures["Giraffe.vexTrim"])
 
 -- Ward
-kattArmor.TrimPatterns.ward
+giraffeArmor.TrimPatterns.ward
 	:setTexture(textures["textures.armor.trims.wardTrim"] or textures["Giraffe.wardTrim"])
 
 -- Wayfinder
-kattArmor.TrimPatterns.wayfinder
+giraffeArmor.TrimPatterns.wayfinder
 	:setTexture(textures["textures.armor.trims.wayfinderTrim"] or textures["Giraffe.wayfinderTrim"])
 
 -- Wild
-kattArmor.TrimPatterns.wild
+giraffeArmor.TrimPatterns.wild
 	:setTexture(textures["textures.armor.trims.wildTrim"] or textures["Giraffe.wildTrim"])
 
 -- Config setup
