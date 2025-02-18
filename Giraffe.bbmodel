@@ -9623,26 +9623,6 @@
 			"start_delay": "",
 			"loop_delay": "",
 			"animators": {
-				"e5ea135a-96d4-b313-98ef-f19632ee61fb": {
-					"name": "Player",
-					"type": "bone",
-					"keyframes": [
-						{
-							"channel": "position",
-							"data_points": [
-								{
-									"x": "0",
-									"y": "-2",
-									"z": "0"
-								}
-							],
-							"uuid": "eb05a142-7ba5-2e7b-91f4-6251878493a2",
-							"time": 0,
-							"color": -1,
-							"interpolation": "linear"
-						}
-					]
-				},
 				"56b7e67b-665c-6ffb-8b6c-76947a351ff3": {
 					"name": "UpperBody",
 					"type": "bone",
@@ -9657,20 +9637,6 @@
 								}
 							],
 							"uuid": "493b2ee9-18c0-88c8-3fb7-4c418ceef4d8",
-							"time": 0,
-							"color": -1,
-							"interpolation": "linear"
-						},
-						{
-							"channel": "position",
-							"data_points": [
-								{
-									"x": "0",
-									"y": "1",
-									"z": "-7"
-								}
-							],
-							"uuid": "c0f8db53-ec80-542a-bcb2-02f4946e7607",
 							"time": 0,
 							"color": -1,
 							"interpolation": "linear"

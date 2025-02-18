@@ -241,10 +241,6 @@ function events.RENDER(delta, context)
 	parts.group.LeftArmFP:visible(firstPerson)
 	parts.group.RightArmFP:visible(firstPerson)
 	
-	-- Set upperbody to offset rot and crouching pivot point
-	parts.group.UpperBody
-		:offsetPivot(anims.crouch:isPlaying() and -parts.group.UpperBody:getAnimPos() or 0)
-	
 	parts.group.NeckPivot
 		:rot(-parts.group.LowerBody:getRot())
 	
